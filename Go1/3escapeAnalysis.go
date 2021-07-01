@@ -45,6 +45,13 @@ func dummy(b int) int {
 
 // 2. 取地址发生逃逸
 
+/*
+	# command-line-arguments
+	./3escapeAnalysis.go:53:6: moved to heap: c   // 将 c 移到堆中。
+	./3escapeAnalysis.go:25:13: ... argument does not escape
+	&{}
+*/
+
 type Data struct {
 }
 
@@ -52,6 +59,14 @@ func dummy2() *Data {
 	// 实例化c为Data类型
 	var c Data
 	// 返回函数局部变量地址
+	// Go 编译器已经确认如果将变量 c 分配在栈上是无法保证程序最终结果的，
+	// 如果这样做，dummy2() 函数的返回值将是一个不可预知的内存地址
 	return &c
 
 }
+
+// 总结：
+
+// 编译器觉得变量应该分配在堆和栈上的原则是：
+// 变量是否被取地址；
+// 变量是否发生逃逸。

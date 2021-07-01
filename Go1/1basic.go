@@ -12,6 +12,48 @@ import (
 var globalName string
 var globalAge int = 20
 
+// 常量
+const cacheKey string = "cacheKey" // 相当于 math.Pi 的近似值
+const IPv4Len = 4
+
+// 批量声明多个常量
+const (
+	e  = 2.7182818
+	pi = 3.1415926
+)
+
+const (
+	a = 1
+	b
+	c = 2
+	d
+)
+
+// fmt.Println(a, b, c, d) // "1 1 2 2"
+
+// Go语言现阶段没有枚举类型，可以利用iota 来模拟枚举类型
+type Weekday int
+
+const (
+	Sunday  Weekday = iota // 从周日 0 开始， 枚举值自增1
+	Monday                 // 1
+	Tuesday                // 2
+	Wednesday
+	Thursday
+	Friday
+	Saturday
+)
+
+const (
+	FlagNone = 1 << iota // 移位操作
+	FlagRed
+	FlagGreen
+	FlagBlue
+)
+
+// fmt.Printf("%d %d %d\n", FlagRed, FlagGreen, FlagBlue)   // 二进制位左移一位，打印结果： 2 4 8
+// fmt.Printf("%b %b %b\n", FlagRed, FlagGreen, FlagBlue)   // 二进制格式输出： 10 100 1000
+
 func main() {
 
 	fmt.Println("Hello World!")
