@@ -125,5 +125,5 @@ func test4() {
 
 	*name = "wushangkun"
 
-	fmt.Println(*name)
+	fmt.Println(*name)  // wushangkun
 }
