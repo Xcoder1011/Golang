@@ -62,16 +62,24 @@ type Vehicle struct {
 
 func testBrand() {
 
+	// 声明变量car为车辆类型
 	var car Vehicle
 
+	// 指定调用MyBrand的Show
 	car.MyBrand.Show()
 
-	ta := reflect.TypeOf(car)
+	// 取car的类型反射对象
+	ta := reflect.TypeOf(car) // 使用反射取变量 car 的反射类型对象，以查看其成员类型。
 
-	for i := 0; i < ta.NumField(); i++ {
+	// 遍历car的所有成员
+	for i := 0; i < ta.NumField(); i++ { // 遍历 car 的结构体成员
+		// car的成员信息
 		f := ta.Field(i)
+		// 打印成员的字段名和类型
 		fmt.Printf("FieldName: %v, FieldType: %v\n", f.Name, f.Type.
 			Name())
 	}
 
+	// FieldName: MyBrand, FieldType: Brand
+	// FieldName: Brand, FieldType: Brand
 }
