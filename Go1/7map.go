@@ -188,6 +188,14 @@ func concurrentMap() {
 	syncMap()
 }
 
+/*
+sync.Map 有以下特性：
+ 无须初始化，直接声明即可。
+ sync.Map 不能使用 map 的方式进行取值和设置等操作，而是使用 sync.Map 的方法进行调用，
+ Store 表示存储，Load 表示获取，Delete 表示删除。
+ 使用 Range 配合一个回调函数进行遍历操作，通过回调函数返回内部遍历出来的值，
+ Range 参数中回调函数的返回值在需要继续迭代遍历时，返回 true，终止迭代遍历时，返回 false。
+*/
 func syncMap() {
 
 	var safeMap sync.Map
@@ -197,19 +205,19 @@ func syncMap() {
 	safeMap.Store("egypt", 200)
 
 	// Load 读取
-	fmt.Println(safeMap.Load("green"))   // 97 true
+	fmt.Println(safeMap.Load("green")) // 97 true
 
-// Delete 删除
+	// Delete 删除
 	safeMap.Delete("egypt")
 
-// 遍历所有sync.Map中的键值对
-	safeMap.Range(func(k, v interface{}) bool {
+	// 遍历所有sync.Map中的键值对
+	safeMap.Range(func(k, v interface{}) bool { // 参数为 k、v，类型为 interface{}
 		fmt.Println("iterate:", k, v)
 		return true
 	})
 	/*
-	iterate: green 97
-	iterate: london 100
+		iterate: green 97
+		iterate: london 100
 	*/
 
 }

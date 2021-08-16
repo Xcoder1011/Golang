@@ -262,6 +262,34 @@ func main() {
 		U+0041 - U+03B2 - U+101234
 	*/
 
+	/*
+		nil 标识符是不能比较的
+		输出  invalid operation: nil == nil (operator == not defined on nil)
+		// fmt.Println(nil == nil)
+
+		nil 不是关键字或保留字
+		我们可以定义一个名称为 nil 的变量
+		var nil = errors.New("my god") //  use of untyped nil
+		fmt.Printf("%T", nil)
+
+		nil 是 map、slice、pointer、channel、func、interface 的零值
+		不同类型的 nil 值占用的内存大小可能是不一样的
+
+		var p *struct{}
+		fmt.Println(unsafe.Sizeof(p)) // 8
+		var s []int
+		fmt.Println(unsafe.Sizeof(s)) // 24
+		var m map[int]bool
+		fmt.Println(unsafe.Sizeof(m)) // 8
+		var c chan string
+		fmt.Println(unsafe.Sizeof(c)) // 8
+		var f func()
+		fmt.Println(unsafe.Sizeof(f)) // 8
+		var i interface{}
+		fmt.Println(unsafe.Sizeof(i)) // 16
+
+	*/
+
 }
 
 // 形式参数
