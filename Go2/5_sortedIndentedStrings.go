@@ -6,6 +6,36 @@ import (
 	"strings"
 )
 
+/*
+
+	缩进排序
+
+	将字符串按照等级（缩进级别）进行排序
+
+输出：
+
+|     Original      |       Sorted      |
+|-------------------|-------------------|
+|Nonmetals          |Alkali Metals      |
+|    Hydrogen       |    Lithium        |
+|    Carbon         |    Potassium      |
+|    Nitrogen       |    Sodium         |
+|    Oxygen         |Inner Transitionals|
+|Inner Transitionals|    Actinides      |
+|    Lanthanides    |        Curium     |
+|        Europium   |        Plutonium  |
+|        Cerium     |        Uranium    |
+|    Actinides      |    Lanthanides    |
+|        Uranium    |        Cerium     |
+|        Plutonium  |        Europium   |
+|        Curium     |Nonmetals          |
+|Alkali Metals      |    Carbon         |
+|    Lithium        |    Hydrogen       |
+|    Sodium         |    Nitrogen       |
+|    Potassium      |    Oxygen         |
+
+*/
+
 var original = []string{
 	"Nonmetals",
 	"    Hydrogen",

@@ -1,5 +1,7 @@
 package main
 
+/// 词频统计
+
 import (
 	"bufio"
 	"fmt"
