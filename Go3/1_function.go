@@ -49,25 +49,6 @@ func main() {
 	f = testFunction
 	f()
 
-	/*
-		 		匿名函数
-
-			   func(参数列表)(返回参数列表){
-			       函数体
-			   }
-	*/
-	// 1) 在定义时调用匿名函数
-	func(num int) {
-		fmt.Println("num is ", num) // num is  100
-	}(100) // 匿名函数可以在声明后调用
-
-	// 2) 将匿名函数赋值给变量
-	f3 := func(num int) {
-		fmt.Println("num is ", num) // num is  200
-	}
-	// 使用f3()调用
-	f3(200)
-
 }
 
 func testFunction() {

@@ -56,7 +56,7 @@ var skillParam = flag.String("skill", "run", "skill to perform")
 // 终端输入： go run 4_anonymous_function.go --skill=fly
 // 打印： angel fly
 func testAnoymous() {
-	
+
 	// 解析命令行参数，解析完成后，skillParam 指针变量将指向命令行传入的值。
 	flag.Parse()
 
@@ -72,8 +72,8 @@ func testAnoymous() {
 		},
 	}
 
-// skillParam 是一个 *string 类型的指针变量
-// 使用 *skillParam 获取到命令行传过来的值
+	// skillParam 是一个 *string 类型的指针变量
+	// 使用 *skillParam 获取到命令行传过来的值
 	if f, ok := skill[*skillParam]; ok {
 		f()
 	} else {
