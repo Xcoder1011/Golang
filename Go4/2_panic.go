@@ -111,15 +111,15 @@ func RecoverTest() {
 	fmt.Println("运行后")
 
 	/*
-	
-	打印：
 
-		运行前
-		手动宕机前
-		error: &{手动触发panic}
-		赋值宕机前
-		runtime error: runtime error: invalid memory address or nil pointer dereference
-		运行后
+		打印：
+
+			运行前
+			手动宕机前
+			error: &{手动触发panic}
+			赋值宕机前
+			runtime error: runtime error: invalid memory address or nil pointer dereference
+			运行后
 
 	*/
 
