@@ -67,8 +67,8 @@ func main() {
 	generator := playerGenerate("zhangsan")
 	// 返回玩家的名字和血量
 	name, hp := generator()
-	// 打印值
-	fmt.Println(name, hp)
+
+	fmt.Println(name, hp) // 打印 zhangsan 150
 
 }
 
