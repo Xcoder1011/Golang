@@ -63,11 +63,11 @@ func request() {
 		os.Exit(1)
 		return
 	}
-	
+
 	defer resp.Body.Close()
-	
+
 	body, err := ioutil.ReadAll(res.Body)
-	
+
 	if err != nil {
 		fmt.Println(err)
 		return

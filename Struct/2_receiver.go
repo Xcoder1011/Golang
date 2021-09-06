@@ -104,6 +104,7 @@ func main() {
 	fmt.Println(b.Add(2)) // 3
 
 	/// 示例：二维矢量模拟玩家移动
+
 	// 实例化玩家对象，并设速度为0.5
 	player := NewPlayer(0.5)
 	// 让玩家移动到3,1点

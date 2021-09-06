@@ -37,6 +37,8 @@ type Player struct {
 	Name        string
 	HealthPoint int
 	MagicPoint  int
+	int
+	Point
 }
 
 type Command struct {
