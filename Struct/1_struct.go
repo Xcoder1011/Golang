@@ -37,8 +37,8 @@ type Player struct {
 	Name        string
 	HealthPoint int
 	MagicPoint  int
-	int
-	Point
+	int         // 结构体可以包含一个或多个匿名（或内嵌）字段
+	Point       // 内嵌结构体
 }
 
 type Command struct {

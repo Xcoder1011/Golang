@@ -69,7 +69,7 @@ func main() {
 
 	fmt.Printf("%+v\n", bird) // {Flying:{condition:1} Walkable:{condition:0}}
 
-	// 初始化内嵌结构体
+	// 初始化内嵌匿名结构体
 	dog := Dog{
 		Walkable: Walkable{
 			condition: 1,
@@ -81,6 +81,6 @@ func main() {
 		},
 	}
 
-	fmt.Printf("%+v\n", dog) // {Flying:{condition:1} Walkable:{condition:0}}
+	fmt.Printf("%+v\n", dog) // {Walkable:{condition:1} Jump:{condition:1}}
 
 }
